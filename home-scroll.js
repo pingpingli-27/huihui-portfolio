@@ -1,14 +1,21 @@
 const badgeDialog = document.querySelector('.badge-dialog');
+const pocket = document.querySelector('.badge-pocket-window');
+if (pocket) {
+  const tuckedCard = badgeDialog.querySelector('.creator-id').cloneNode(true);
+  tuckedCard.classList.add('badge-peek');
+  pocket.append(tuckedCard);
+}
 let trigger;
 let extractingBadge;
 
 async function pullBadgeFrom(board, card) {
   const initialOffset = getComputedStyle(card).translate;
-  const distance = board.getBoundingClientRect().width * .22;
+  const angle = parseFloat(getComputedStyle(card).rotate) * Math.PI / 180;
+  const distance = board.getBoundingClientRect().width * .39;
   board.dataset.pulling = '';
   const slide = card.animate([
     { translate: initialOffset === 'none' ? '0px 0px' : initialOffset },
-    { translate: `${distance}px ${-distance / Math.tan(42 * Math.PI / 180)}px` },
+    { translate: `${distance * Math.sin(angle)}px ${-distance * Math.cos(angle)}px` },
   ], { duration: 440, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'forwards' });
 
   await slide.finished;

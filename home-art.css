@@ -38,55 +38,6 @@
 .about .bio-board {
   filter: drop-shadow(2px 8px 12px #63432a28);
 }
-.badge-board-patch, .badge-pocket-window {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 150ms ease;
-}
-.badge-board-patch {
-  background: url(home-bio-empty-pocket.png) center / 100% 100%;
-  clip-path: polygon(17% 29%,29% 14%,41% 13%,50% 19%,59% 13%,64% 15%,64% 22%,59% 30%,60% 39%,54% 43%,43% 43%,35% 37%,20% 36%,16% 32%);
-}
-.badge-pocket-window {
-  clip-path: shape(from 0 0, line to 100% 0, line to 100% 30%,
-    line to 57.8% 30%,
-    curve to 48.8% 40.8% with 59.1% 37.2% / 53.4% 40.8%,
-    curve to 38.4% 34.1% with 44.2% 40.8% / 40.3% 38.5%,
-    line to 29.5% 34.1%, line to 24.8% 30%, line to 0 30%, close);
-}
-.badge-pocket-window .badge-peek {
-  position: absolute;
-  left: 43.3%;
-  top: 5.4%;
-  width: 34.5%;
-  height: auto;
-  aspect-ratio: 650 / 920;
-  rotate: 42deg;
-  transform-origin: top left;
-  transition: translate 250ms cubic-bezier(.22,.61,.31,1);
-}
-.about .target-badge { z-index: 2; }
-.about .target-badge:hover { background: transparent; }
-.bio-board[data-pulling] :is(.badge-board-patch,.badge-pocket-window) { opacity: 1; }
-.bio-board[data-pulling] .badge-peek { transition: none; }
-.bio-board[data-extracted] .badge-pocket-window { opacity: 0; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .bio-board:has(.target-badge:hover):not([data-pulling]) :is(.badge-board-patch,.badge-pocket-window) { opacity: 1; }
-  .bio-board:has(.target-badge:hover):not([data-pulling]) .badge-peek { translate: 2.2% -2.45%; }
-}
-.portfolio-home .badge-dialog[open] { animation: badge-reveal 220ms ease both; }
-@keyframes badge-reveal { from { opacity: 0; } }
-@media (prefers-reduced-motion: no-preference) {
-  .portfolio-home .badge-dialog::backdrop { animation: badge-backdrop-in 260ms ease both; }
-  @keyframes badge-backdrop-in {
-    from { background: #3d2e3000; backdrop-filter: blur(0); }
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .portfolio-home .badge-dialog[open] { animation: none; }
-}
 .about .bio-board > img {
   clip-path: shape(
     from 12.51% 10.08%,

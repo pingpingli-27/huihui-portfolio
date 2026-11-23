@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="home-scroll.css">
   <link rel="stylesheet" href="home-art.css">
   <link rel="stylesheet" href="home-cover.css">
+  <link rel="stylesheet" href="home-badge.css">
   <script src="home-scroll.js" defer></script>
   <script src="home-art.js" defer></script>
 </head>
@@ -158,20 +159,55 @@
           </div>
         </details>
       </section>
-      <figure class="bio-board">
-        <img src="home-bio.png" width="1191" height="1320" alt="粉色夹板个人介绍。你好，我是李慧慧。我的学习背景是美术教育与广告学，做过水杯与鞋履品牌运营，平时记录翻包和日常好物。">
-        <button class="target target-badge" type="button" data-contact aria-haspopup="dialog">抽出工牌，查看联系方式</button>
-        <span class="badge-board-patch" aria-hidden="true"></span>
-        <span class="badge-pocket-window" aria-hidden="true"><span class="badge-art badge-peek"></span></span>
+      <figure class="bio-board" id="contact-card">
+        <img src="home-bio-empty-pocket.png" width="1191" height="1321" alt="粉色夹板个人介绍。你好，我是李慧慧。我的学习背景是美术教育与广告学，做过水杯与鞋履品牌运营，平时记录翻包和日常好物。">
+        <button class="target target-badge" type="button" title="抽出工牌" data-contact aria-haspopup="dialog">抽出工牌，查看联系方式</button>
+        <div class="badge-pocket-window" aria-hidden="true" inert></div>
       </figure>
       <a class="return" href="#home">回到封面</a>
     </section>
   </main>
   <dialog aria-label="李慧慧的联系方式" class="badge-dialog">
     <button class="close" type="button" aria-label="收起工牌" autofocus>×</button>
-    <div class="badge-art" aria-label="粉色工牌，李慧慧，内容运营与达人商务" role="img"></div>
-    <a class="target target-mail" href="mailto:2536979602@qq.com">合作邮箱</a>
-    <a class="target target-profile" href="https://xhslink.cn/o/1ykGt3UdYQE" target="_blank" rel="noopener">小红书主页</a>
+    <div class="creator-id">
+      <span class="id-strap" aria-hidden="true"><span class="id-strap-tip"></span></span>
+      <div class="id-shell">
+        <div class="id-paper">
+        <span class="id-stars id-stars-top" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span class="id-stars id-stars-bottom" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span class="id-stars id-stars-left" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span class="id-stars id-stars-right" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+          <figure class="id-collage">
+            <span class="id-collage-art" role="img" aria-label="李慧慧画的花叶图案"></span>
+            <span class="id-collage-paper" aria-hidden="true"></span>
+            <span class="id-photo">
+              <span class="id-photo-image" role="img" aria-label="李慧慧拍摄的青苹果包挂"></span>
+            </span>
+            <span class="id-collage-star" aria-hidden="true">✦</span>
+            <figcaption>青苹果包挂</figcaption>
+          </figure>
+          <div class="id-info">
+            <p class="id-kicker">CREATOR CARD</p>
+            <h2>李慧慧</h2>
+            <p class="id-role">内容运营 / 达人商务</p>
+            <dl class="id-contacts">
+              <div>
+                <dt>手机</dt>
+                <dd><a href="tel:13858586583">13858586583</a></dd>
+              </div>
+              <div class="id-email">
+                <dt>邮箱</dt>
+                <dd><a href="mailto:2536979602@qq.com">2536979602@qq.com</a></dd>
+              </div>
+              <div>
+                <dt>小红书</dt>
+                <dd><a class="id-profile" href="https://xhslink.cn/o/1ykGt3UdYQE" target="_blank" rel="noopener" aria-label="查看苹苹李呀的小红书主页">查看主页 ↗</a></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
   </dialog>
   <dialog id="art-viewer" class="art-viewer" aria-labelledby="art-viewer-title">
     <button class="art-viewer-close" type="button" aria-label="关闭作品大图" autofocus>×</button>
