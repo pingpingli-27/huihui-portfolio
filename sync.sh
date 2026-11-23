@@ -47,4 +47,4 @@ if git diff --cached --quiet; then
 fi
 git commit -m "sync: 更新站点内容 $(date '+%Y-%m-%d %H:%M')"
 git push
-echo "已推送，GitHub Actions 会在 1-2 分钟内重新发布。"
+echo "已推送，GitHub Pages 会在 1-2 分钟内重新发布：https://pingpingli-27.github.io/huihui-portfolio/"

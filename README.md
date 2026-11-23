@@ -34,7 +34,10 @@ python3 -m http.server 4180
 
 ## 更新与发布
 
-站点用 GitHub Actions 自动部署：**push 到 `main` 就自动发布**，不需要本地构建。
+站点托管在 GitHub Pages，**来源是 `main` 分支根目录 `build_type: legacy`**：
+push 到 `main` 后 GitHub 会自动重建并发布，不需要本地构建。
+
+线上地址：https://pingpingli-27.github.io/huihui-portfolio/
 
 方式一（推荐，从设计稿同步）：
 
@@ -51,8 +54,14 @@ cd huihui-portfolio
 git add -A && git commit -m "改了什么" && git push
 ```
 
-推送后在仓库的 **Actions** 页能看到 `Deploy to GitHub Pages` 的运行记录，绿勾即发布完成，
-通常 1-2 分钟后线上生效（浏览器有缓存时可强制刷新）。
+推送后 1-2 分钟线上生效（浏览器有缓存时强制刷新 ⌘⇧R）。
+构建状态可在这里看：仓库 **Actions** 页里没有流程，看 `Settings → Pages` 顶部的部署记录，
+或者命令行 `gh api repos/pingpingli-27/huihui-portfolio/pages/builds/latest --jq .status`。
+
+> 之所以用分支部署而不是 GitHub Actions：当前 `gh` 的 OAuth token 没有 `workflow` 权限，
+> 无法推送 `.github/workflows/*.yml`。想要 Actions 流水线的话，先执行
+> `gh auth refresh -s workflow`，再把工作流加回来并改 Pages 的 `build_type` 为 `workflow`。
+
 
 ## 已知问题
 
