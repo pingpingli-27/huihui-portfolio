@@ -32,6 +32,21 @@ python3 -m http.server 4180
 # 打开 http://127.0.0.1:4180/
 ```
 
+## 线上地址
+
+同一个站点同时发在两个地方，内容一致：
+
+| 平台 | 网址 | 发布方式 |
+| --- | --- | --- |
+| GitHub Pages | https://pingpingli-27.github.io/huihui-portfolio/ | push 到 `main` 后自动构建 |
+| Cloudflare Pages | https://huihui-portfolio.pages.dev/ | `sync.sh` 里用 wrangler 直接上传 |
+
+Cloudflare 那个是「直接上传」型项目（没有连 Git）。`sync.sh` 跑完会自动接着上传到 Cloudflare，
+所以一改动两边都更新。刷新凭据存在 `~/Library/Preferences/.wrangler/config/default.toml`。
+
+> Cloudflare Pages 默认开启 pretty URLs：访问 `/brand.html` 会 308 跳到 `/brand`，
+> 页面里的相对链接因此都能正常跳到对应内页。这是平台行为，不是 bug。
+
 ## 更新与发布
 
 > **最简单的办法**：桌面上有个「一键更新作品集.command」，改完东西双击它就行，会自动同步 + 提交 + 推送，然后告诉你几分钟后生效。

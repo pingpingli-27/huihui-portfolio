@@ -48,3 +48,18 @@ fi
 git commit -m "sync: 更新站点内容 $(date '+%Y-%m-%d %H:%M')"
 git push
 echo "已推送，GitHub Pages 会在 1-2 分钟内重新发布：https://pingpingli-27.github.io/huihui-portfolio/"
+
+# ---- 同步发布到 Cloudflare Pages ----
+WR="$HOME/.local/wrangler/node_modules/.bin/wrangler"
+if [ -x "$WR" ]; then
+  echo ""
+  echo "正在发布到 Cloudflare Pages…"
+  rm -rf /tmp/cf-site && mkdir -p /tmp/cf-site
+  rsync -a --exclude '.git' --exclude '.github' ./ /tmp/cf-site/
+  if "$WR" pages deploy /tmp/cf-site --project-name huihui-portfolio \
+       --branch main --commit-dirty=true 2>&1 | tail -3; then
+    echo "Cloudflare Pages 已更新：https://huihui-portfolio.pages.dev/"
+  else
+    echo "⚠️ Cloudflare 发布失败（GitHub Pages 那个地址不受影响），可以稍后重跑一次。"
+  fi
+fi
