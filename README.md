@@ -1,6 +1,6 @@
 # 李慧慧 · 作品档案
 
-个人作品集由 HTML、CSS 和原生 JavaScript 构成。首页为 `index.html`，三个详情页为 `brand.html`、`creator.html` 和 `personal.html`。公开联系入口为小红书主页。
+个人作品集由 HTML、CSS 和原生 JavaScript 构成。首页为 `index.html`，三个详情页为 `brand.html`、`creator.html` 和 `personal.html`。公开联系入口包括手机号、邮箱、微信二维码和小红书主页。
 
 ## 本地预览
 
@@ -12,4 +12,4 @@
 
 站点地址为 [李慧慧的作品档案](https://pingpingli-27.github.io/huihui-portfolio/)。发布进度可在仓库的 [Actions 页面](https://github.com/pingpingli-27/huihui-portfolio/actions) 查看。
 
-网页编辑器里的草稿需先导出。同步前请移除私人联系方式、二维码与内部经营数据，检查截图中嵌入的信息及图片元数据。
+网页编辑器里的草稿需先导出。同步前请只保留已确认公开的联系方式，并检查新增截图、图片元数据和内部经营信息。

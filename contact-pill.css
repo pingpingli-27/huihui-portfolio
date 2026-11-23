@@ -1,5 +1,5 @@
 .contact-pill {
-  --center: 25%;
+  --center: 12.5%;
   --depth: 0px;
   --notch: calc(100% - var(--depth));
   --cut: shape(from 0 22px,
@@ -19,11 +19,11 @@
   left: 50%;
   bottom: max(24px, env(safe-area-inset-bottom));
   transform: translateX(-50%);
-  width: min(184px, calc(100% - 36px));
+  width: min(320px, calc(100% - 36px));
   max-width: none;
   height: 59px;
   display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
+  grid-template-columns: repeat(4,minmax(0,1fr));
   gap: 0;
   align-items: center;
   isolation: isolate;
@@ -113,18 +113,23 @@
 }
 @media (max-width: 620px) {
   .contact-pill {
-    width: min(168px, calc(100% - 34px));
+    width: min(288px, calc(100% - 34px));
     height: 54px;
     bottom: max(16px, env(safe-area-inset-bottom));
   }
   .contact-pill .pill-action svg { width: 21px; height: 21px; }
   .contact-pill .pill-action::before { width: 28px; height: 28px; }
+  .contact-pill .pill-email .pill-caption {
+    --caption-x: 0px;
+    left: auto;
+    right: -8px;
+  }
 }
 
 @property --center {
   syntax: "<percentage>";
   inherits: true;
-  initial-value: 25%;
+  initial-value: 12.5%;
 }
 @property --depth {
   syntax: "<length>";
@@ -142,7 +147,9 @@
 }
 @media (hover: hover) {
   .contact-pill:has(.pill-action:hover) { --depth: 8px; }
-  .contact-pill:has(.pill-profile:hover) { --center: 75%; }
+  .contact-pill:has(.pill-phone:hover) { --center: 37.5%; }
+  .contact-pill:has(.pill-wechat:hover) { --center: 62.5%; }
+  .contact-pill:has(.pill-email:hover) { --center: 87.5%; }
   .contact-pill .pill-action:hover::before {
     opacity: 1;
     transform: rotate(-12deg) scale(1);
@@ -154,8 +161,81 @@
   .contact-pill .pill-home:hover .house-fill { fill: #6e4a38; }
   .contact-pill .pill-home:hover .house-door { stroke: #fff1e2; }
 }
+.wechat-dialog {
+  width: min(396px, calc(100% - 34px));
+  max-height: calc(100dvh - 34px);
+  padding: 0;
+  color: #493629;
+  background: #fff6e8;
+  border: 1px solid #fffdf4;
+  border-radius: 18px 20px 19px 17px;
+  box-shadow: 0 12px 35px #4c33374d;
+  font-family: MaiCai, "PingFang SC", sans-serif;
+}
+.wechat-dialog::backdrop {
+  background: #33272b66;
+  backdrop-filter: blur(6px);
+}
+.wechat-contents {
+  position: relative;
+  padding: 20px 20px 17px;
+  text-align: center;
+}
+.wechat-contents h2 {
+  display: inline-block;
+  margin: 1px 0 13px;
+  font: 400 21px/1.26 MaiCai,"PingFang SC",sans-serif;
+  padding: 4px 13px;
+  background: #efd3db;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+}
+.wechat-contents img {
+  display: block;
+  width: 100%;
+  max-width: 306px;
+  max-height: min(62dvh, 390px);
+  height: auto;
+  object-fit: contain;
+  margin: auto;
+  border: 1px solid #eadfce;
+  background: #fff;
+}
+.wechat-close {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  border: 1px solid #e8cfd5;
+  border-radius: 50%;
+  background: #f8e7eb;
+  color: #6e4a38;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.wechat-close:focus-visible {
+  outline: 2px solid #875a6a;
+  outline-offset: 2px;
+}
+.contact-value {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2px auto 5px;
+  padding: 7px 12px;
+  overflow-wrap: anywhere;
+  color: #614737;
+  font: 17px/1.35 "PingFang SC",sans-serif;
+  background: #f3e4cc;
+  border-radius: 7px;
+  text-underline-offset: 3px;
+}
 @media (max-width: 620px) {
   .has-contact-pill { padding-bottom: calc(78px + env(safe-area-inset-bottom)); }
+  .wechat-contents { padding: 19px 15px 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .contact-pill, .contact-pill .pill-action::before, .contact-pill .pill-caption { transition: none; }
