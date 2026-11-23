@@ -79,6 +79,9 @@
   clip-path: none;
   pointer-events: none;
 }
+.desk-file.is-extracting .desk-folder {
+  filter: drop-shadow(0 calc(10 * var(--cover-unit)) calc(14 * var(--cover-unit)) #42352a45);
+}
 .desk-photo { filter: drop-shadow(0 calc(3 * var(--cover-unit)) calc(4 * var(--cover-unit)) #42352a3b); }
 .desk-pocket {
   position: absolute;
