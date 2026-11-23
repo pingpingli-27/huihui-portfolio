@@ -34,6 +34,8 @@ python3 -m http.server 4180
 
 ## 更新与发布
 
+> **最简单的办法**：桌面上有个「一键更新作品集.command」，改完东西双击它就行，会自动同步 + 提交 + 推送，然后告诉你几分钟后生效。
+
 站点托管在 GitHub Pages，**来源是 `main` 分支根目录 `build_type: legacy`**：
 push 到 `main` 后 GitHub 会自动重建并发布，不需要本地构建。
 
