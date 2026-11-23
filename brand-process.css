@@ -1,0 +1,166 @@
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 13px;
+  margin-top: 20px;
+}
+
+.case-actions :is(a, button), .process-close {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 11px;
+  border: 1px solid #6e554446;
+  border-radius: 3px;
+  color: var(--ink);
+  background: #fffaf1;
+  font: 600 14px/1.35 var(--font);
+  text-decoration: none;
+  cursor: pointer;
+}
+.case-actions :is(a, button) {
+  position: relative;
+  isolation: isolate;
+  min-height: 44px;
+  border: 0;
+  padding: 6px 8px;
+  background: transparent;
+  font: 400 16px/1.25 'Brand MaiCai', var(--font);
+}
+.case-actions button { padding-inline: 14px; }
+.case-actions a::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  right: 5px;
+  bottom: 8px;
+  height: 4px;
+  border-top: 2px solid #9c694f;
+  border-radius: 64% 42% 51% 43%;
+  transform: rotate(-3deg);
+}
+.case-actions button::before, .case-actions button::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 4px -2px 4px;
+  border: 1.7px solid #567b67;
+  border-radius: 53% 44% 51% 46%;
+  transform: rotate(-7deg);
+}
+.case-actions button::after {
+  inset: 5px -1px 3px 0;
+  border-color: #567b6777 transparent transparent #567b6777;
+  transform: rotate(-3deg);
+}
+.case-actions a:hover { color: #82503c; }
+.case-actions button:hover::before { background: #b7d1b845; }
+.process-close:hover { background: #f3e6d2; }
+.case-actions :focus-visible, .process-close:focus-visible, .process-related:focus-visible {
+  outline: 2px solid #4b6958;
+  outline-offset: 3px;
+}
+
+.case-detail {
+  width: min(820px, calc(100vw - 32px));
+  max-height: 86dvh;
+  padding: clamp(19px, 4vw, 44px);
+  border: 1px solid #fffef8;
+  color: var(--ink);
+  background: #f8f4eb url('brand-looseleaf-paper.png') 0 0 / 485px 485px;
+  box-shadow: 4px 12px 45px #30211955;
+}
+.case-detail::backdrop {
+  background: #33261db0;
+  backdrop-filter: blur(3px);
+}
+.process-head {
+  position: relative;
+  padding: 0 68px 15px 0;
+  border-bottom: 1px solid #73574645;
+  margin-bottom: 19px;
+}
+.process-head h2 { margin-top: 5px; font-size: clamp(22px, 3.5vw, 33px); }
+.process-head form { position: absolute; top: 0; right: 0; }
+.process-layout.has-photo {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, .9fr);
+  gap: 23px;
+}
+.process-copy section + section { margin-top: 15px; }
+.process-copy h3 {
+  display: inline;
+  background: linear-gradient(transparent 77%, #a8c9b6a8 77% 96%, transparent 96%);
+  padding-inline: 2px;
+  font-size: 17px;
+}
+.process-copy p { margin-top: 5px; }
+.process-photo {
+  align-self: center;
+  padding: 7px;
+  background: #fffcf5;
+  box-shadow: 1px 4px 9px #4833282b;
+}
+.process-photo img { display: block; width: 100%; height: auto; }
+.process-photo figcaption { margin: 5px 2px 0; color: var(--muted); font-size: 13px; }
+.process-related { display: inline-block; margin-top: 8px; color: #385947; text-underline-offset: .2em; }
+
+@font-face {
+  font-family: 'Brand MaiCai';
+  src: url('TaoBaoMaiCaiTi-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+.brand-operations {
+  max-width: 1110px;
+  margin: 49px auto 0;
+}
+.operations-heading {
+  margin: 0 0 3px 8px;
+  font: 400 clamp(24px, 3vw, 32px)/1.4 'Brand MaiCai', var(--font);
+}
+.operations-archive { align-items: stretch; }
+.operations-archive .file-card { margin: 0; }
+.operations-archive .case-copy > h2 { font-size: clamp(22px, 2.15vw, 28px); }
+.operations-archive .case-metric {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.case-metric strong { font-size: 20px; }
+.operations-archive .community-card { grid-template-columns: minmax(0, 1fr); }
+.community-note {
+  width: fit-content;
+  max-width: 100%;
+  margin: 17px 0 0;
+  padding: 9px 13px 10px;
+  background: #e0e9d9cc;
+  box-shadow: 1px 2px 4px #604f3d20;
+  border-top: 2px solid #88a184;
+  transform: rotate(-1.4deg);
+}
+.community-note div {
+  display: grid;
+  grid-template-columns: minmax(100px, auto) minmax(0, 1fr);
+  gap: 11px;
+  align-items: baseline;
+  padding: 2px 0;
+  line-height: 1.5;
+}
+.community-note div + div { border-top: 1px solid #78917447; }
+.community-note dt { color: #53644e; font-size: 13px; }
+.community-note dd { margin: 0; color: var(--ink); font-weight: 600; white-space: nowrap; }
+.community-note s { color: #665d53; font-size: 13px; font-weight: 400; }
+
+@media (max-width: 660px) {
+  .process-layout.has-photo { grid-template-columns: minmax(0, 1fr); gap: 17px; }
+  .process-photo { max-width: 420px; }
+}
+
+@media (max-width: 720px) {
+  .brand-operations { max-width: 480px; margin-top: 37px; }
+}

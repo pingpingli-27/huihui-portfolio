@@ -1,88 +1,15 @@
-# 李慧慧 · 作品集（静态站点）
+# 李慧慧 · 作品档案
 
-纯静态站点：HTML + CSS + 原生 JS，无构建步骤、无后端、无外部依赖（字体和图片都在仓库里）。
-整个目录直接就是线上内容，`index.html` 是首页。
-
-## 页面
-
-| 文件 | 内容 |
-| --- | --- |
-| `index.html` | 首页：封面纸叠档案、关于慧慧、生活观察、绘画与书法（11 件作品 + 大图查看）、粉色夹板工牌 |
-| `brand.html` | 品牌内容档案（BABLOV / 矩阵号案例） |
-| `creator.html` | 达人合作笔记 |
-| `personal.html` | 我的生活观察簿 |
-| `about.html` | 独立关于页 |
-
-## 目录
-
-```
-art/           11 张绘画作品（原图，单张 1-5MB）
-works/         作品内页配图（19 张，来自 paper-portfolio/dist/assets）
-*.css *.js     各页面样式与交互
-TaoBaoMaiCaiTi-Regular.woff2   封面标题字体（淘宝买菜体）
-home-*.png     封面与介绍用的位图素材
-.nojekyll      关闭 GitHub Pages 的 Jekyll 处理，保证原样输出
-```
+个人作品集由 HTML、CSS 和原生 JavaScript 构成。首页为 `index.html`，三个详情页为 `brand.html`、`creator.html` 和 `personal.html`。公开联系入口为小红书主页。
 
 ## 本地预览
 
-```bash
-cd huihui-portfolio
-python3 -m http.server 4180
-# 打开 http://127.0.0.1:4180/
-```
+在仓库根目录运行 `python3 -m http.server 4180`，然后打开 `http://127.0.0.1:4180/`。
 
-## 线上地址
+## 更新网站
 
-同一个站点同时发在两个地方，内容一致：
+编辑公开版页面和素材，检查新增文件只包含可公开的信息，再提交并推送到 `main`。GitHub Pages 从 `main` 根目录自动发布。图片、字体和脚本使用相对路径，以便在仓库子路径下加载。
 
-| 平台 | 网址 | 发布方式 |
-| --- | --- | --- |
-| GitHub Pages | https://pingpingli-27.github.io/huihui-portfolio/ | push 到 `main` 后自动构建 |
-| Cloudflare Pages | https://huihui-portfolio.pages.dev/ | `sync.sh` 里用 wrangler 直接上传 |
+站点地址为 [李慧慧的作品档案](https://pingpingli-27.github.io/huihui-portfolio/)。发布进度可在仓库的 [Actions 页面](https://github.com/pingpingli-27/huihui-portfolio/actions) 查看。
 
-Cloudflare 那个是「直接上传」型项目（没有连 Git）。`sync.sh` 跑完会自动接着上传到 Cloudflare，
-所以一改动两边都更新。刷新凭据存在 `~/Library/Preferences/.wrangler/config/default.toml`。
-
-> Cloudflare Pages 默认开启 pretty URLs：访问 `/brand.html` 会 308 跳到 `/brand`，
-> 页面里的相对链接因此都能正常跳到对应内页。这是平台行为，不是 bug。
-
-## 更新与发布
-
-> **最简单的办法**：桌面上有个「一键更新作品集.command」，改完东西双击它就行，会自动同步 + 提交 + 推送，然后告诉你几分钟后生效。
-
-站点托管在 GitHub Pages，**来源是 `main` 分支根目录 `build_type: legacy`**：
-push 到 `main` 后 GitHub 会自动重建并发布，不需要本地构建。
-
-线上地址：https://pingpingli-27.github.io/huihui-portfolio/
-
-方式一（推荐，从设计稿同步）：
-
-```bash
-cd huihui-portfolio
-./sync.sh          # 把 作品集/.work/chapter-previews 的最新改动同步进来、提交并推送
-```
-
-方式二（直接改）：
-
-```bash
-cd huihui-portfolio
-# 编辑 index.html / *.css / art 里的图片……
-git add -A && git commit -m "改了什么" && git push
-```
-
-推送后 1-2 分钟线上生效（浏览器有缓存时强制刷新 ⌘⇧R）。
-构建状态可在这里看：仓库 **Actions** 页里没有流程，看 `Settings → Pages` 顶部的部署记录，
-或者命令行 `gh api repos/pingpingli-27/huihui-portfolio/pages/builds/latest --jq .status`。
-
-> 之所以用分支部署而不是 GitHub Actions：当前 `gh` 的 OAuth token 没有 `workflow` 权限，
-> 无法推送 `.github/workflows/*.yml`。想要 Actions 流水线的话，先执行
-> `gh auth refresh -s workflow`，再把工作流加回来并改 Pages 的 `build_type` 为 `workflow`。
-
-
-## 已知问题
-
-- `home-art.css` 引用了 `home-bio-empty-pocket.png`，这个文件在源目录里就不存在。
-  它只影响「抽出工牌」时底板上那块补丁（平时 `opacity: 0` 不可见），线上会有一个 404 请求。
-  拿到原图后放进根目录即可。
-- `art/` 里是原图，合计约 37MB，首次滚动到作品区会稍慢。后续可压成 WebP / 生成缩略图。
+网页编辑器里的草稿需先导出。同步前请移除私人联系方式、二维码与内部经营数据，检查截图中嵌入的信息及图片元数据。

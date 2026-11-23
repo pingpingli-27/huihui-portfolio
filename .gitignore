@@ -16,3 +16,8 @@ outputs/
 *.zip
 *.psd
 create.py
+
+# 部署工具的本地缓存
+.wrangler/
+.env
+.env.*

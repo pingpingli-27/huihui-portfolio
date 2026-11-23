@@ -1,0 +1,38 @@
+.brand .file-card {
+  isolation: isolate;
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+  filter: drop-shadow(2px 4px 2px #49382e2d) drop-shadow(3px 7px 6px #49382e25);
+}
+
+.brand .file-card::before { content: none; }
+
+.brand .file-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  border: 1px solid #fffffb;
+  background:
+    linear-gradient(120deg, #fffcf237, #eee6d41c),
+    url('brand-looseleaf-paper.png') 0 0 / 485px 485px repeat,
+    #f7f5ee;
+  --hole: radial-gradient(circle 7.5px, #000 6.7px, transparent 7.5px);
+  --hole-x: 14px;
+  mask:
+    linear-gradient(#000 0 0),
+    var(--hole) var(--hole-x) calc(50% - 43.5px) / 17px 17px no-repeat,
+    var(--hole) var(--hole-x) calc(50% - 14.5px) / 17px 17px no-repeat,
+    var(--hole) var(--hole-x) calc(50% + 14.5px) / 17px 17px no-repeat,
+    var(--hole) var(--hole-x) calc(50% + 43.5px) / 17px 17px no-repeat;
+  mask-composite: exclude, add, add, add;
+}
+
+@media (max-width: 720px) {
+  .brand .file-card::after {
+    --hole-x: 8px;
+    mask-position: 0 0, var(--hole-x) 28px, var(--hole-x) 57px,
+      var(--hole-x) 86px, var(--hole-x) 115px;
+  }
+}

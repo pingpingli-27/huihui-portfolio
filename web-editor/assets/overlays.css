@@ -1,0 +1,17 @@
+.bio-board{container-type:inline-size}
+.we-board-copy{
+  position:absolute;z-index:1;display:block;margin:0;line-height:1.02;white-space:pre-wrap;
+  font-family:MaiCai,"PingFang SC",sans-serif;color:#fcf9f1;text-align:center;
+}
+.we-board-label-en{top:34.7%;left:62.8%;font:1.49cqw/1.2 Georgia,serif;color:#2e2829}
+.we-board-label-zh{top:37.1%;left:62.8%;width:14.5%;font-size:2.24cqw;color:#242125;letter-spacing:.13em}
+.we-board-hello{top:45.45%;left:28.9%;width:42.4%;font-size:8.15cqw;font-weight:700}
+.we-board-name{top:56.4%;left:31.2%;width:38.5%;font-size:11.2cqw;font-weight:700;transform:rotate(-2.2deg);color:#f047ad}
+.we-board-role{top:69.65%;left:33.7%;width:33.5%;font-size:5.35cqw;font-weight:700}
+.we-board-note{left:8.7%;width:21%;text-align:left;transform:rotate(-10deg);font-size:1.83cqw;color:#282522}
+.we-board-note-a{top:72.4%}.we-board-note-b{top:76.5%;left:9.3%}.we-board-note-c{top:80.45%;left:10.1%}
+.we-sticker-copy{left:4.7%;top:87.2%;width:14.95%;height:5.2%;transform:rotate(-5deg);display:grid;place-items:center;color:#806554;font:400 calc(16 * var(--cover-unit))/1.15 MaiCai,sans-serif;letter-spacing:.06em;pointer-events:none}
+.we-about-copy{position:absolute;inset:43% 0 auto;text-align:center;font:400 calc(17 * var(--cover-unit))/1.1 MaiCai,sans-serif;letter-spacing:.06em;pointer-events:none}
+.desk-about{color:#49352b;text-decoration:none}
+.we-graphic-new{position:absolute;inset:0;display:grid;place-items:center;font:900 clamp(22px,8vw,134px)/1.08 MaiCai,"PingFang SC",sans-serif;color:#64422d;paint-order:stroke fill;-webkit-text-stroke:.06em #fff5de;text-shadow:.04em .07em #e8a9be;white-space:pre-wrap;text-align:center}
+.we-added{position:absolute;display:block;z-index:25;white-space:pre-wrap;transform-origin:center center}

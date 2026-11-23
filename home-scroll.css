@@ -94,11 +94,6 @@ body:has(dialog[open]) { overflow: hidden; }
   from { opacity: 0; transform: translateY(15px) rotate(-4deg) scale(.92); }
   to { opacity: 1; transform: none; }
 }
-.badge-art {
-  height: 100%;
-  background: url(home-badge.png) 48.2% 37.4% / 183.23% auto;
-  clip-path: polygon(54% 2%,63% 3%,63% 18%,60% 25%,89% 26%,95% 30%,95% 94%,91% 99%,8% 98%,3% 95%,4% 29%,8% 25%,48% 25%,49% 17%);
-}
 .close {
   position: absolute;
   z-index: 2;
