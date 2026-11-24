@@ -1,0 +1,210 @@
+.planner-main {
+  --open-book-photo: url('open-unclipped.jpg');
+  --looseleaf: var(--open-book-photo) 91.35% 53% / 245% 114% no-repeat;
+}
+.planner-picker {
+  max-width: 110px;
+  margin-right: 6px;
+  padding: 4px 5px;
+  border: 1px solid #a88e7660;
+  border-radius: 3px;
+  background: #f7eee0;
+  color: inherit;
+  font: inherit;
+}
+.turning-rings {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: var(--open-book-photo) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.planner-open[data-turning] .turning-rings,
+.planner-open[data-spread] .turning-rings { display: block; }
+.turning-rings {
+  z-index: 5;
+  --ring-shape: radial-gradient(ellipse, #000 0 66%, transparent 73%);
+  mask:
+    var(--ring-shape) 50.1% 21.01% / 6.2% 1.7% no-repeat,
+    var(--ring-shape) 50.1% 29.73% / 6.2% 1.7% no-repeat,
+    var(--ring-shape) 50.1% 39.2% / 6.2% 1.7% no-repeat,
+    var(--ring-shape) 50.1% 62.97% / 6.2% 1.7% no-repeat,
+    var(--ring-shape) 50.1% 72.08% / 6.2% 1.7% no-repeat,
+    var(--ring-shape) 50.1% 80.45% / 6.2% 1.7% no-repeat;
+}
+
+.turning-leaf {
+  position: absolute;
+  inset: 6.35% 4.6% 5.35% 51.4%;
+  z-index: 4;
+  transform-origin: left center;
+  pointer-events: none;
+}
+.turning-face {
+  position: absolute;
+  inset: 0;
+  background: var(--looseleaf), #faf8f3;
+  border-radius: 2px 8px 8px 2px;
+  box-shadow: 2px 4px 9px #33251540;
+}
+.turning-face.back {
+  opacity: 0;
+  transform: scaleX(-1);
+}
+.parked-leaf {
+  position: absolute;
+  z-index: 2;
+  inset: 6.35% 48.6% 5.35% 7.4%;
+}
+.parked-leaf::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.turning-face.back, .parked-leaf::before {
+  background: linear-gradient(270deg, #99877217, transparent 14%), var(--looseleaf), #faf8f3;
+  border-radius: 8px 2px 2px 8px;
+  box-shadow: -2px 3px 7px #3428213d;
+  --hole: radial-gradient(circle, #000 0 44%, transparent 49%);
+  mask:
+    linear-gradient(#000 0 0),
+    var(--hole) 91.5% 16.15% / 1.55cqw 1.55cqw no-repeat,
+    var(--hole) 91.5% 25.65% / 1.55cqw 1.55cqw no-repeat,
+    var(--hole) 91.5% 36.5% / 1.55cqw 1.55cqw no-repeat,
+    var(--hole) 91.5% 64.05% / 1.55cqw 1.55cqw no-repeat,
+    var(--hole) 91.5% 74.65% / 1.55cqw 1.55cqw no-repeat,
+    var(--hole) 91.5% 83.8% / 1.55cqw 1.55cqw no-repeat;
+  mask-composite: exclude, add, add, add, add, add;
+}
+:is(.turning-leaf, .parked-leaf) .planner-pages { inset: 8.66% 10.4% 4.70% 8.64%; }
+.turning-face.front .planner-pages { right: 7.95%; }
+.cover-lining .parked-leaf {
+  right: auto;
+  width: 22.176%;
+  transform: scaleX(1.98413);
+  transform-origin: left center;
+}
+
+.page-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+.page-controls [data-step="-1"] { justify-self: start; }
+.page-controls [data-step="1"] { justify-self: end; }
+.case-back {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  padding-right: .45cqw;
+  color: #49392d;
+  font-size: clamp(7px, 1.12cqw, 16px);
+  line-height: 1.66;
+}
+.case-back .process-head {
+  padding: 0 0 .86cqw;
+  margin-bottom: 1.05cqw;
+}
+.case-back .back-label { color: #55715c; font: 400 1.1cqw 'Brand MaiCai', var(--font); }
+.case-back .process-head .case-tag {
+  position: static;
+  max-width: none;
+  margin: .28cqw 0 0;
+  font-size: .95cqw;
+}
+.case-back .process-head h2 {
+  margin-top: .34cqw;
+  font: 700 clamp(11px, 2.1cqw, 30px)/1.25 var(--serif);
+}
+.case-back .process-layout.has-photo { display: block; }
+.case-back .process-copy section + section { margin-top: .98cqw; }
+.case-back .process-copy h3 { font-size: clamp(8px, 1.24cqw, 18px); }
+.case-back .process-copy p { margin-top: .18cqw; }
+.case-back .process-photo {
+  width: min(77%, 21cqw);
+  margin-top: 1.03cqw;
+  padding: .4cqw;
+}
+.case-back .process-photo figcaption { font-size: .91cqw; margin-top: .25cqw; }
+.case-back .process-related { margin-top: .35cqw; }
+
+.planner-flat { max-width: 1060px; margin: 0 auto; padding: 16px 20px 45px; }
+.flat-sheets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 29px 32px;
+}
+.flat-sheet {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  aspect-ratio: 705 / 858;
+  filter: drop-shadow(1px 4px 6px #4b3a2c35);
+}
+.flat-sheet::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: 7px 9px 8px 6px;
+  background: var(--looseleaf), #faf8f3;
+  --punch: radial-gradient(circle, #000 0 37%, transparent 42%);
+  mask:
+    linear-gradient(#000 0 0),
+    var(--punch) 2.65% 17% / 19px 19px no-repeat,
+    var(--punch) 2.65% 26% / 19px 19px no-repeat,
+    var(--punch) 2.65% 35% / 19px 19px no-repeat,
+    var(--punch) 2.65% 64% / 19px 19px no-repeat,
+    var(--punch) 2.65% 73% / 19px 19px no-repeat,
+    var(--punch) 2.65% 82% / 19px 19px no-repeat;
+  mask-composite: exclude, add, add, add, add, add;
+}
+.flat-sheet .planner-pages { inset: 7.5% 7% 5% 12.5%; }
+.flat-sheet .case-cover img { max-height: 48cqw; }
+.flat-sheet .third .case-cover img, .flat-sheet .giveaway-card .case-cover img { max-height: 50cqw; }
+.flat-sheet .case-tag { font-size: clamp(12px, 2.8cqw, 16px); top: 17%; }
+.flat-sheet .case-stat { font-size: 14px; top: 30%; gap: 3px 5px; }
+.flat-sheet .case-stat strong { font-size: clamp(15px, 3.8cqw, 20px); }
+.flat-sheet .case-stat span { font-size: 12px; }
+.flat-sheet .case-copy > h2 { font-size: clamp(19px, 5.2cqw, 28px); top: 55%; }
+.flat-sheet .case-copy > p:not(.case-tag) { font-size: clamp(13px, 3.05cqw, 16px); top: 66%; }
+.flat-sheet .case-actions { bottom: 4%; gap: 8px; }
+.flat-sheet .case-actions :is(a, button) { font-size: 14px; min-height: 42px; }
+.flat-sheet .case-actions a::after { bottom: 7px; }
+.flat-sheet .community-card .case-tag { top: 13%; }
+.flat-sheet .community-card h2 { top: 26%; }
+.flat-sheet .community-card .case-copy > p:not(.case-tag) { top: 38%; }
+.flat-sheet .community-note { top: 60%; font-size: 14px; }
+.flat-sheet .case-back {
+  inset: 7.5% 7% 5% 12.5%;
+  padding-right: 5px;
+  font-size: clamp(13px, 3cqw, 16px);
+}
+.flat-sheet .case-back .process-head { padding-bottom: 9px; margin-bottom: 11px; }
+.flat-sheet .case-back .back-label { font-size: 14px; }
+.flat-sheet .case-back .process-head .case-tag { margin: 4px 0 0; font-size: 12px; }
+.flat-sheet .case-back .process-head h2 { font-size: clamp(19px, 5.2cqw, 28px); }
+.flat-sheet .case-back .process-copy section + section { margin-top: 11px; }
+.flat-sheet .case-back .process-copy h3 { font-size: 15px; }
+.flat-sheet .case-back .process-copy p { margin-top: 3px; }
+.flat-sheet .case-back .process-photo { width: min(65%, 240px); margin-top: 11px; padding: 5px; }
+.flat-sheet .case-back .process-photo figcaption { font-size: 11px; margin-top: 4px; }
+.flat-front {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 7px;
+  border: 1px solid #9b88715e;
+  border-radius: 3px;
+  background: #f5ede0;
+  color: #513d30;
+  cursor: pointer;
+  font: 400 13px 'Brand MaiCai', var(--font);
+}
+
+@media (max-width: 740px) {
+  .planner-flat { padding-inline: 15px; }
+  .flat-sheets { grid-template-columns: minmax(0, 1fr); gap: 22px; max-width: 495px; margin: auto; }
+  .flat-sheet { min-height: 415px; }
+  .flat-sheet .case-actions :is(a, button) { padding-inline: 8px; }
+}

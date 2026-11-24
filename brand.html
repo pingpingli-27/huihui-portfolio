@@ -2,121 +2,291 @@
 <html lang="zh-CN"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>品牌内容档案 · 李慧慧作品集</title>
+  <title>品牌内容手帐 · 李慧慧作品集</title>
   <link rel="stylesheet" href="paper.css">
   <link rel="stylesheet" href="brand-case-paper.css">
   <link rel="stylesheet" href="brand-process.css">
-  <script src="brand-process.js" defer></script>
+  <link rel="stylesheet" href="brand-planner/reference.css?v=1">
+  <link rel="stylesheet" href="brand-planner/motion.css?v=1">
+  <link rel="stylesheet" href="brand-planner/leaves.css?v=1">
+  <link rel="preload" as="image" href="brand-planner/open-unclipped.jpg">
+  <link rel="preload" as="image" href="brand-planner/cover-released.jpg">
+  <script src="brand-planner/planner.js?v=1" defer></script>
 <link rel="stylesheet" href="web-editor/assets/overlays.css"><style>@font-face{font-family:MaiCai;src:url("TaoBaoMaiCaiTi-Regular.woff2") format("woff2");font-display:swap}</style>
   <link rel="stylesheet" href="contact-pill.css?v=public2">
   <script src="contact-pill.js?v=public2" defer></script>
 </head>
-<body class="brand" data-we-key="m0">
+<body class="brand has-contact-pill" data-we-key="m0">
 <header class="top" data-we-key="m1"><div class="top-inner">
   <a class="wordmark" href="index.html#home" data-we-key="m2"><span data-editor-text="" data-we-key="t0">HUIHUI </span><span><span data-editor-text="" data-we-key="t1">回到首页</span></span></a>
   <nav aria-label="作品集章节"><a href="brand.html" aria-current="page" data-we-key="m3"><span data-editor-text="" data-we-key="t2">品牌内容档案</span></a><a href="creator.html" data-we-key="m4"><span data-editor-text="" data-we-key="t3">达人合作笔记</span></a><a href="personal.html" data-we-key="m5"><span data-editor-text="" data-we-key="t4">我的生活观察簿</span></a></nav>
   <span class="volume"><span data-editor-text="" data-we-key="t5">SELECTED WORKS</span></span>
 </div></header>
-<main>
-  <div class="masthead" data-we-key="m6">
-    <p class="kicker"><span data-editor-text="" data-we-key="t6">BRAND STORIES</span></p>
-    <h1 aria-label="品牌内容档案" data-title="品牌内容档案"><span data-editor-text="" data-we-key="t7">品牌内容档案</span></h1>
-    <p class="lead"><span data-editor-text="" data-we-key="t8" style="translate: calc(0vw) calc(1.66667vw); display: inline-block;">从新品上架到热点选题，怎么让产品融入生活。</span></p>
+<main class="planner-main">
+  <div class="planner-tools">
+    <p>HUIHUI 的品牌内容手帐</p>
+    <div>
+      <select class="planner-picker" aria-label="跳到案例" hidden>
+        <option value="" disabled>案例索引</option>
+        <option value="0">咖啡店自带杯</option>
+        <option value="1">苹果杯大厦</option>
+        <option value="2">季度新品合集</option>
+        <option value="3">毕业季抽奖</option>
+        <option value="4">敲敲杯群内返场</option>
+      </select>
+      <button type="button" data-planner-view="closed" hidden>合上手帐</button>
+      <button type="button" data-planner-view="flat" hidden>平铺</button>
+      <button type="button" data-planner-view="open" hidden>回到手帐</button>
+    </div>
   </div>
 
-  <div class="archive">
-    <article class="file-card first" data-we-key="m7">
-      <a class="case-cover" href="works/image2.jpeg" target="_blank" rel="noopener" aria-label="查看咖啡店自带杯封面原图" data-we-key="m8">
-        <img src="works/image2.jpeg" width="336" height="418" alt="咖啡店柜台上的双饮口杯和咖啡纸袋" data-we-key="m9">
-      </a>
-      <div class="case-copy" data-we-key="m10">
-        <p class="case-tag"><span data-editor-text="" data-we-key="t9">BABLOV / 矩阵号从零起步</span></p>
-        <h2><span data-editor-text="" data-we-key="t10">把双饮口杯拍进咖啡店</span></h2>
-        <p><span data-editor-text="" data-we-key="t11">借“自带杯”话题切入，用“不在场证明”做标题。选题、拍摄、标题和文案由我独立完成。</span></p>
-        <div class="case-stat" data-we-key="m11"><strong><span data-editor-text="" data-we-key="t12">75 万+</span></strong><span><span data-editor-text="" data-we-key="t13">阅读</span></span><strong><span data-editor-text="" data-we-key="t14">6,224</span></strong><span><span data-editor-text="" data-we-key="t15">点赞</span></span></div>
-        <div class="case-actions">
-          <a href="https://xhslink.cn/o/8kYUHVvHzR" target="_blank" rel="noopener">直达笔记</a>
-          <button type="button" data-case-dialog="coffee-process" aria-haspopup="dialog" aria-controls="coffee-process">详细过程</button>
-        </div>
+  <div class="planner-scene">
+  <section class="planner-cover" aria-labelledby="planner-title">
+    <div class="cover-hinge">
+      <div class="cover-back-face" aria-hidden="true" inert>
+        <div class="cover-lining"></div>
       </div>
-    </article>
-    <article class="file-card second" data-we-key="m12">
-      <a class="case-cover" href="works/image8.jpeg" target="_blank" rel="noopener" aria-label="查看苹果杯大厦封面原图" data-we-key="m13">
-        <img src="works/image8.jpeg" width="447" height="601" alt="以蓝天和楼房为背景仰拍的红把手苹果杯" data-we-key="m14">
-      </a>
-      <div class="case-copy" data-we-key="m15">
-        <p class="case-tag"><span data-editor-text="" data-we-key="t16">BABLOV / 新品卖点</span></p>
-        <h2><span data-editor-text="" data-we-key="t17">苹果杯大厦</span></h2>
-        <p><span data-editor-text="" data-we-key="t18">借“奶茶大厦”的仰拍，把 1,250 mL 的大容量拍出来。</span></p>
-        <div class="case-stat" data-we-key="m16"><strong><span data-editor-text="" data-we-key="t19">3,274</span></strong><span><span data-editor-text="" data-we-key="t20">点赞</span></span><strong><span data-editor-text="" data-we-key="t21">661</span></strong><span><span data-editor-text="" data-we-key="t22">收藏</span></span></div>
-        <div class="case-actions">
-          <a href="https://xhslink.cn/o/2hdKwsqFcOt" target="_blank" rel="noopener">直达笔记</a>
-          <button type="button" data-case-dialog="applecup-process" aria-haspopup="dialog" aria-controls="applecup-process">详细过程</button>
-        </div>
+      <div class="cover-front-face">
+    <div class="cover-type">
+      <h1 id="planner-title">品牌内容档案</h1>
+      <p>Brand Stories</p>
+      <span>LI HUIHUI</span>
+    </div>
+    <div class="cover-photos">
+      <img src="works/image2.jpeg" alt="咖啡店里的双饮口杯">
+      <img src="works/image8.jpeg" alt="仰拍的苹果杯">
+      <img src="cover-desk/cups.png" alt="品牌新品杯款照片">
+    </div>
+    <span class="cover-bands" aria-hidden="true"></span>
       </div>
-    </article>
-    <article class="file-card third" data-we-key="m17">
-      <a class="case-cover" href="works/image7.jpeg" target="_blank" rel="noopener" aria-label="查看季度杯款合集笔记原图" data-we-key="m18">
-        <img src="works/image7.jpeg" width="1206" height="2622" alt="BABLOV 情报站发布的季度杯款合集笔记截图，包含杯款照片与互动数据" data-we-key="m19">
-      </a>
-      <div class="case-copy" data-we-key="m20">
-        <p class="case-tag"><span data-editor-text="" data-we-key="t23">BABLOV / 月度上新规划</span></p>
-        <h2><span data-editor-text="" data-we-key="t24">三个账号怎么配合上新</span></h2>
-        <p><span data-editor-text="" data-we-key="t25">主号首发原创，小号用授权素材二创，矩阵号跟进趣味选题。</span></p>
-        <div class="case-stat" data-we-key="m21"><strong><span data-editor-text="" data-we-key="t26">8,399</span></strong><span><span data-editor-text="" data-we-key="t27">季度新品合集获赞</span></span></div>
-        <div class="case-actions">
-          <a href="https://xhslink.cn/o/2ByYJH4I9U1" target="_blank" rel="noopener">直达笔记</a>
-          <button type="button" data-case-dialog="launch-process" aria-haspopup="dialog" aria-controls="launch-process">详细过程</button>
-        </div>
+    </div>
+    <div class="book-props" aria-hidden="true">
+      <div class="loose-clip"><i class="wire"></i><i class="stud"></i></div>
+      <div class="loose-upper"><i class="upper-cord"></i></div>
+      <div class="loose-lower">
+        <i class="lower-cord"></i><i class="key-charm"></i>
+        <i class="heart-charm"></i><i class="heart-charm second-heart"></i><i class="lock-charm"></i>
       </div>
-    </article>
-  </div>
+    </div>
+    <button class="cover-open" type="button" aria-controls="planner-inside"><span>打开手帐</span></button>
+  </section>
 
-  <section class="brand-operations" aria-labelledby="operations-heading">
-    <h2 class="operations-heading" id="operations-heading">社群运营与活动策划</h2>
-    <div class="archive operations-archive">
+  <section class="planner-open" id="planner-inside" aria-label="打开的品牌内容手帐" hidden>
+    <aside class="planner-pocket">
+      <div class="pocket-stationery">
+        <figure><img src="works/image8.jpeg" alt="苹果杯大厦"></figure>
+        <figure><img src="cover-desk/cups.png" alt="季度新品的杯款照片"></figure>
+      </div>
+      <div class="pocket-index">
+        <h2>案例索引</h2>
+        <ul>
+          <li><button type="button" data-page="0">咖啡店自带杯</button></li>
+          <li><button type="button" data-page="1">苹果杯大厦</button></li>
+          <li><button type="button" data-page="2">季度新品合集</button></li>
+          <li><button type="button" data-page="3">毕业季抽奖</button></li>
+          <li><button type="button" data-page="4">敲敲杯群内返场</button></li>
+        </ul>
+      </div>
+    </aside>
+    <section class="parked-leaf" aria-label="左侧活页背面" hidden>
+      <div class="planner-pages"></div>
+    </section>
+    <span class="turning-rings" aria-hidden="true"></span>
+    <section class="planner-pages" aria-label="案例活页">
+      <article class="file-card first" data-we-key="m7">
+          <a class="case-cover" href="works/image2.jpeg" target="_blank" rel="noopener" aria-label="查看咖啡店自带杯封面原图" data-we-key="m8">
+            <img src="works/image2.jpeg" width="336" height="418" alt="咖啡店柜台上的双饮口杯和咖啡纸袋" data-we-key="m9">
+          </a>
+          <div class="case-copy" data-we-key="m10">
+            <p class="case-tag"><span data-editor-text="" data-we-key="t9">BABLOV / 矩阵号从零起步</span></p>
+            <h2><span data-editor-text="" data-we-key="t10">把双饮口杯拍进咖啡店</span></h2>
+            <p><span data-editor-text="" data-we-key="t11">借“自带杯”话题切入，用“不在场证明”做标题。选题、拍摄、标题和文案由我独立完成。</span></p>
+            <div class="case-stat" data-we-key="m11"><strong><span data-editor-text="" data-we-key="t12">75 万+</span></strong><span><span data-editor-text="" data-we-key="t13">阅读</span></span><strong><span data-editor-text="" data-we-key="t14">6,224</span></strong><span><span data-editor-text="" data-we-key="t15">点赞</span></span></div>
+            <div class="case-actions">
+              <a href="https://xhslink.cn/o/8kYUHVvHzR" target="_blank" rel="noopener">直达笔记</a>
+              <button type="button" data-case-back="coffee-process" title="翻到该案例背面">详细过程</button>
+            </div>
+          </div>
+        </article>
+      <article class="file-card second" data-we-key="m12">
+          <a class="case-cover" href="works/image8.jpeg" target="_blank" rel="noopener" aria-label="查看苹果杯大厦封面原图" data-we-key="m13">
+            <img src="works/image8.jpeg" width="447" height="601" alt="以蓝天和楼房为背景仰拍的红把手苹果杯" data-we-key="m14">
+          </a>
+          <div class="case-copy" data-we-key="m15">
+            <p class="case-tag"><span data-editor-text="" data-we-key="t16">BABLOV / 新品卖点</span></p>
+            <h2><span data-editor-text="" data-we-key="t17">苹果杯大厦</span></h2>
+            <p><span data-editor-text="" data-we-key="t18">借“奶茶大厦”的仰拍，把 1,250 mL 的大容量拍出来。</span></p>
+            <div class="case-stat" data-we-key="m16"><strong><span data-editor-text="" data-we-key="t19">3,274</span></strong><span><span data-editor-text="" data-we-key="t20">点赞</span></span><strong><span data-editor-text="" data-we-key="t21">661</span></strong><span><span data-editor-text="" data-we-key="t22">收藏</span></span></div>
+            <div class="case-actions">
+              <a href="https://xhslink.cn/o/2hdKwsqFcOt" target="_blank" rel="noopener">直达笔记</a>
+              <button type="button" data-case-back="applecup-process" title="翻到该案例背面">详细过程</button>
+            </div>
+          </div>
+        </article>
+      <article class="file-card third" data-we-key="m17">
+          <a class="case-cover" href="works/image7.jpeg" target="_blank" rel="noopener" aria-label="查看季度杯款合集笔记原图" data-we-key="m18">
+            <img src="works/image7.jpeg" width="1206" height="2622" alt="BABLOV 情报站发布的季度杯款合集笔记截图，包含杯款照片与互动数据" data-we-key="m19">
+          </a>
+          <div class="case-copy" data-we-key="m20">
+            <p class="case-tag"><span data-editor-text="" data-we-key="t23">BABLOV / 月度上新规划</span></p>
+            <h2><span data-editor-text="" data-we-key="t24">三个账号怎么配合上新</span></h2>
+            <p><span data-editor-text="" data-we-key="t25">主号首发原创，小号用授权素材二创，矩阵号跟进趣味选题。</span></p>
+            <div class="case-stat" data-we-key="m21"><strong><span data-editor-text="" data-we-key="t26">8,399</span></strong><span><span data-editor-text="" data-we-key="t27">季度新品合集获赞</span></span></div>
+            <div class="case-actions">
+              <a href="https://xhslink.cn/o/2ByYJH4I9U1" target="_blank" rel="noopener">直达笔记</a>
+              <button type="button" data-case-back="launch-process" title="翻到该案例背面">详细过程</button>
+            </div>
+          </div>
+        </article>
       <article class="file-card second giveaway-card">
-        <a class="case-cover" href="works/image11.jpeg" target="_blank" rel="noopener" aria-label="查看毕业季抽奖封面原图">
-          <img src="works/image11.jpeg" width="610" height="1065" alt="BABLOV 毕业季抽奖笔记，毕业帽和三只水杯一起入镜">
-        </a>
-        <div class="case-copy">
-          <p class="case-tag">BABLOV / 抽奖活动策划</p>
-          <h2>毕业季抽奖，举杯为考生庆祝</h2>
-          <p>用毕业帽和举杯的画面应景，邀请考生晒照片、讲故事，也给其他读者留了送祝福的入口。</p>
-          <div class="case-stat">
-            <span class="case-metric"><strong>213</strong> 赞</span>
-            <span class="case-metric"><strong>73</strong> 收藏</span>
-            <span class="case-metric"><strong>112</strong> 评论</span>
-          </div>
-          <div class="case-actions">
-            <a href="https://xhslink.cn/o/2cenjubU5DL" target="_blank" rel="noopener">直达笔记</a>
-            <button type="button" data-case-dialog="giveaway-process" aria-haspopup="dialog" aria-controls="giveaway-process">详细过程</button>
-          </div>
-        </div>
-      </article>
-
+            <a class="case-cover" href="works/image11.jpeg" target="_blank" rel="noopener" aria-label="查看毕业季抽奖封面原图">
+              <img src="works/image11.jpeg" width="610" height="1065" alt="BABLOV 毕业季抽奖笔记，毕业帽和三只水杯一起入镜">
+            </a>
+            <div class="case-copy">
+              <p class="case-tag">BABLOV / 抽奖活动策划</p>
+              <h2>毕业季抽奖，举杯为考生庆祝</h2>
+              <p>用毕业帽和举杯的画面应景，邀请考生晒照片、讲故事，也给其他读者留了送祝福的入口。</p>
+              <div class="case-stat">
+                <span class="case-metric"><strong>213</strong> 赞</span>
+                <span class="case-metric"><strong>73</strong> 收藏</span>
+                <span class="case-metric"><strong>112</strong> 评论</span>
+              </div>
+              <div class="case-actions">
+                <a href="https://xhslink.cn/o/2cenjubU5DL" target="_blank" rel="noopener">直达笔记</a>
+                <button type="button" data-case-back="giveaway-process" title="翻到该案例背面">详细过程</button>
+              </div>
+            </div>
+          </article>
       <article class="file-card third community-card">
-        <div class="case-copy">
-          <p class="case-tag">BABLOV / 社群运营</p>
-          <h2>敲敲杯群内返场</h2>
-          <p>我负责品牌粉丝群运营。敲敲杯返场时，我把活动时间、群友权益和客服咨询方式写在一张说明里。</p>
+            <div class="case-copy">
+              <p class="case-tag">BABLOV / 社群运营</p>
+              <h2>敲敲杯群内返场</h2>
+              <p>我负责品牌粉丝群运营。敲敲杯返场时，我把活动时间、群友权益和客服咨询方式写在一张说明里。</p>
           <dl class="community-note">
             <div><dt>社群</dt><dd>整理活动通知</dd></div>
             <div><dt>客服</dt><dd>统一活动答复</dd></div>
           </dl>
-          <div class="case-actions">
-            <button type="button" data-case-dialog="community-process" aria-haspopup="dialog" aria-controls="community-process">详细过程</button>
+              <div class="case-actions">
+                <button type="button" data-case-back="community-process" title="翻到该案例背面">详细过程</button>
+              </div>
+            </div>
+          </article>
+      <div class="page-controls">
+        <button type="button" data-step="-1">上一页</button>
+        <output aria-live="polite"></output>
+        <button type="button" data-step="1">下一页</button>
+      </div>
+    </section>
+  </section>
+  </div>
+  <section class="planner-flat" aria-label="平铺的手帐活页" hidden>
+    <div class="flat-sheets">
+      <div class="flat-sheet">
+        <div class="planner-pages">
+          <article class="file-card first" data-we-key="m7">
+          <a class="case-cover" href="works/image2.jpeg" target="_blank" rel="noopener" aria-label="查看咖啡店自带杯封面原图" data-we-key="m8">
+            <img src="works/image2.jpeg" width="336" height="418" alt="咖啡店柜台上的双饮口杯和咖啡纸袋" data-we-key="m9">
+          </a>
+          <div class="case-copy" data-we-key="m10">
+            <p class="case-tag"><span data-editor-text="" data-we-key="t9">BABLOV / 矩阵号从零起步</span></p>
+            <h2><span data-editor-text="" data-we-key="t10">把双饮口杯拍进咖啡店</span></h2>
+            <p><span data-editor-text="" data-we-key="t11">借“自带杯”话题切入，用“不在场证明”做标题。选题、拍摄、标题和文案由我独立完成。</span></p>
+            <div class="case-stat" data-we-key="m11"><strong><span data-editor-text="" data-we-key="t12">75 万+</span></strong><span><span data-editor-text="" data-we-key="t13">阅读</span></span><strong><span data-editor-text="" data-we-key="t14">6,224</span></strong><span><span data-editor-text="" data-we-key="t15">点赞</span></span></div>
+            <div class="case-actions">
+              <a href="https://xhslink.cn/o/8kYUHVvHzR" target="_blank" rel="noopener">直达笔记</a>
+              <button type="button" data-case-back="coffee-process" title="翻到该案例背面">详细过程</button>
+            </div>
           </div>
+        </article>
         </div>
-      </article>
+      </div>
+      <div class="flat-sheet">
+        <div class="planner-pages">
+          <article class="file-card second" data-we-key="m12">
+          <a class="case-cover" href="works/image8.jpeg" target="_blank" rel="noopener" aria-label="查看苹果杯大厦封面原图" data-we-key="m13">
+            <img src="works/image8.jpeg" width="447" height="601" alt="以蓝天和楼房为背景仰拍的红把手苹果杯" data-we-key="m14">
+          </a>
+          <div class="case-copy" data-we-key="m15">
+            <p class="case-tag"><span data-editor-text="" data-we-key="t16">BABLOV / 新品卖点</span></p>
+            <h2><span data-editor-text="" data-we-key="t17">苹果杯大厦</span></h2>
+            <p><span data-editor-text="" data-we-key="t18">借“奶茶大厦”的仰拍，把 1,250 mL 的大容量拍出来。</span></p>
+            <div class="case-stat" data-we-key="m16"><strong><span data-editor-text="" data-we-key="t19">3,274</span></strong><span><span data-editor-text="" data-we-key="t20">点赞</span></span><strong><span data-editor-text="" data-we-key="t21">661</span></strong><span><span data-editor-text="" data-we-key="t22">收藏</span></span></div>
+            <div class="case-actions">
+              <a href="https://xhslink.cn/o/2hdKwsqFcOt" target="_blank" rel="noopener">直达笔记</a>
+              <button type="button" data-case-back="applecup-process" title="翻到该案例背面">详细过程</button>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="flat-sheet">
+        <div class="planner-pages">
+          <article class="file-card third" data-we-key="m17">
+          <a class="case-cover" href="works/image7.jpeg" target="_blank" rel="noopener" aria-label="查看季度杯款合集笔记原图" data-we-key="m18">
+            <img src="works/image7.jpeg" width="1206" height="2622" alt="BABLOV 情报站发布的季度杯款合集笔记截图，包含杯款照片与互动数据" data-we-key="m19">
+          </a>
+          <div class="case-copy" data-we-key="m20">
+            <p class="case-tag"><span data-editor-text="" data-we-key="t23">BABLOV / 月度上新规划</span></p>
+            <h2><span data-editor-text="" data-we-key="t24">三个账号怎么配合上新</span></h2>
+            <p><span data-editor-text="" data-we-key="t25">主号首发原创，小号用授权素材二创，矩阵号跟进趣味选题。</span></p>
+            <div class="case-stat" data-we-key="m21"><strong><span data-editor-text="" data-we-key="t26">8,399</span></strong><span><span data-editor-text="" data-we-key="t27">季度新品合集获赞</span></span></div>
+            <div class="case-actions">
+              <a href="https://xhslink.cn/o/2ByYJH4I9U1" target="_blank" rel="noopener">直达笔记</a>
+              <button type="button" data-case-back="launch-process" title="翻到该案例背面">详细过程</button>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="flat-sheet">
+        <div class="planner-pages">
+          <article class="file-card second giveaway-card">
+            <a class="case-cover" href="works/image11.jpeg" target="_blank" rel="noopener" aria-label="查看毕业季抽奖封面原图">
+              <img src="works/image11.jpeg" width="610" height="1065" alt="BABLOV 毕业季抽奖笔记，毕业帽和三只水杯一起入镜">
+            </a>
+            <div class="case-copy">
+              <p class="case-tag">BABLOV / 抽奖活动策划</p>
+              <h2>毕业季抽奖，举杯为考生庆祝</h2>
+              <p>用毕业帽和举杯的画面应景，邀请考生晒照片、讲故事，也给其他读者留了送祝福的入口。</p>
+              <div class="case-stat">
+                <span class="case-metric"><strong>213</strong> 赞</span>
+                <span class="case-metric"><strong>73</strong> 收藏</span>
+                <span class="case-metric"><strong>112</strong> 评论</span>
+              </div>
+              <div class="case-actions">
+                <a href="https://xhslink.cn/o/2cenjubU5DL" target="_blank" rel="noopener">直达笔记</a>
+                <button type="button" data-case-back="giveaway-process" title="翻到该案例背面">详细过程</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="flat-sheet">
+        <div class="planner-pages">
+          <article class="file-card third community-card">
+            <div class="case-copy">
+              <p class="case-tag">BABLOV / 社群运营</p>
+              <h2>敲敲杯群内返场</h2>
+              <p>我负责品牌粉丝群运营。敲敲杯返场时，我把活动时间、群友权益和客服咨询方式写在一张说明里。</p>
+          <dl class="community-note">
+            <div><dt>社群</dt><dd>整理活动通知</dd></div>
+            <div><dt>客服</dt><dd>统一活动答复</dd></div>
+          </dl>
+              <div class="case-actions">
+                <button type="button" data-case-back="community-process" title="翻到该案例背面">详细过程</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
-
-  <dialog class="case-detail" id="coffee-process" aria-labelledby="coffee-process-title">
-    <div class="process-head">
+  <template id="coffee-process">
+    <article class="case-back">
+      <div class="process-head">
+        <p class="back-label">详细过程</p>
       <p class="case-tag">BABLOV / 矩阵号从零起步</p>
-      <h2 id="coffee-process-title">把双饮口杯拍进咖啡店</h2>
-      <form method="dialog"><button class="process-close" autofocus>关闭</button></form>
+      <h2 tabindex="-1">把双饮口杯拍进咖啡店</h2>
     </div>
     <div class="process-layout">
       <div class="process-copy">
@@ -134,13 +304,14 @@
         </section>
       </div>
     </div>
-  </dialog>
-
-  <dialog class="case-detail" id="applecup-process" aria-labelledby="applecup-process-title">
-    <div class="process-head">
+    </article>
+  </template>
+  <template id="applecup-process">
+    <article class="case-back">
+      <div class="process-head">
+        <p class="back-label">详细过程</p>
       <p class="case-tag">BABLOV / 新品卖点</p>
-      <h2 id="applecup-process-title">苹果杯大厦</h2>
-      <form method="dialog"><button class="process-close" autofocus>关闭</button></form>
+      <h2 tabindex="-1">苹果杯大厦</h2>
     </div>
     <div class="process-copy">
       <section>
@@ -156,13 +327,14 @@
         <p>我会补拍一条实际使用记录，装一次水带出门，拍下用量和杯子装冰后的状态，再看评论里大家想了解哪一项。</p>
       </section>
     </div>
-  </dialog>
-
-  <dialog class="case-detail" id="launch-process" aria-labelledby="launch-process-title">
-    <div class="process-head">
+    </article>
+  </template>
+  <template id="launch-process">
+    <article class="case-back">
+      <div class="process-head">
+        <p class="back-label">详细过程</p>
       <p class="case-tag">BABLOV / 月度上新规划</p>
-      <h2 id="launch-process-title">三个账号怎么配合上新</h2>
-      <form method="dialog"><button class="process-close" autofocus>关闭</button></form>
+      <h2 tabindex="-1">三个账号怎么配合上新</h2>
     </div>
     <div class="process-copy">
       <section>
@@ -179,13 +351,14 @@
         <a class="process-related" href="https://xhslink.cn/o/AxbmNzCecnB" target="_blank" rel="noopener">看便利店牛奶杯笔记</a>
       </section>
     </div>
-  </dialog>
-
-  <dialog class="case-detail" id="giveaway-process" aria-labelledby="giveaway-process-title">
-    <div class="process-head">
+    </article>
+  </template>
+  <template id="giveaway-process">
+    <article class="case-back">
+      <div class="process-head">
+        <p class="back-label">详细过程</p>
       <p class="case-tag">BABLOV / 抽奖活动策划</p>
-      <h2 id="giveaway-process-title">毕业季抽奖，举杯为考生庆祝</h2>
-      <form method="dialog"><button class="process-close" autofocus>关闭</button></form>
+      <h2 tabindex="-1">毕业季抽奖，举杯为考生庆祝</h2>
     </div>
     <div class="process-copy">
       <section>
@@ -201,13 +374,14 @@
         <p>6 月 21 日，官号在置顶评论公布了 3 位获奖者，读者回到原帖就能看到结果。活动笔记收获 213 赞、73 收藏和 112 条评论。</p>
       </section>
     </div>
-  </dialog>
-
-  <dialog class="case-detail" id="community-process" aria-labelledby="community-process-title">
-    <div class="process-head">
+    </article>
+  </template>
+  <template id="community-process">
+    <article class="case-back">
+      <div class="process-head">
+        <p class="back-label">详细过程</p>
       <p class="case-tag">BABLOV / 社群运营</p>
-      <h2 id="community-process-title">敲敲杯群内返场</h2>
-      <form method="dialog"><button class="process-close" autofocus>关闭</button></form>
+      <h2 tabindex="-1">敲敲杯群内返场</h2>
     </div>
     <div class="process-copy">
       <section>
@@ -223,8 +397,8 @@
         <p>我把群内说明和客服的答复统一起来，减少群友在两个渠道之间重复询问。</p>
       </section>
     </div>
-  </dialog>
-
+    </article>
+  </template>
 </main>
 <footer data-we-key="m22"><span><span data-editor-text="" data-we-key="t28">LI HUIHUI / PORTFOLIO</span></span><span><span data-editor-text="" data-we-key="t29">李慧慧的作品档案</span></span></footer>
 
